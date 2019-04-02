@@ -1,0 +1,4 @@
+chaostoolkit-lib>=1.1.2
+logzero
+requests
+dateparser
