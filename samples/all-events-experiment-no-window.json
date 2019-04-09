@@ -1,0 +1,32 @@
+{
+    "version": "1.0.0",
+    "title": "Showcases getting all events from Instana",
+    "description": "Demonstrates retrieving all the events for a time wondow and adding it into the experiment's journal",
+    "tags": [
+        "instana"
+    ],
+    "secrets": {
+        "instana": {
+            "instana_api_token": {
+                "type": "env",
+                "key": "INSTANA_API_TOKEN"
+            }
+        }
+    },
+    "configuration": {
+            "instana_host": "https://ccchaoslabs-ccchaoslabs.instana.io"
+    },
+    "method": [
+		{
+            "type": "probe",
+            "name": "get-all-events-in-window-from-instana",
+            "provider": {
+                "secrets": ["instana"],
+                "type": "python",
+                "module": "chaosinstana.probes",
+                "func": "get_all_events_in_window"
+            }
+        }
+    ],
+    "rollbacks": []
+}

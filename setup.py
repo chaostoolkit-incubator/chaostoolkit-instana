@@ -30,7 +30,7 @@ author_email = 'contact@chaostoolkit.org'
 url = 'http://chaostoolkit.org'
 license = 'Apache License Version 2.0'
 packages = [
-    'chaostoolkit_instana'
+    'chaosinstana'
 ]
 
 needs_pytest = set(['pytest', 'test']).intersection(sys.argv)

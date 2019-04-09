@@ -96,10 +96,8 @@ $ pip install -r requirements-dev.txt -r requirements.txt
 Then, point your environment to this directory:
 
 ```console
-$ python setup.py develop
+$ pip install -e .
 ```
 
 Now, you can edit the files and they will be automatically be seen by your
 environment, even when running from the `chaos` command locally.
-
-
