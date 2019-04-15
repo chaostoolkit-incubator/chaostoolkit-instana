@@ -18,7 +18,7 @@ def get_all_events_in_window(from_time: str = None, to_time: str = None,
     get all events from instana within a time window, given by the from_time
     and the to_time
     """
-    logger.debug("delay is: {}".format(delay))
+    logger.debug("instana probe delay is: {}".format(delay))
     time.sleep(delay)
     from_time = convert_time(from_time)
     to_time = convert_time(to_time)
