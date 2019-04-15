@@ -1,4 +1,5 @@
 import dateparser
+import time
 
 from chaoslib.exceptions import ActivityFailed
 from chaoslib.types import Configuration, Secrets
@@ -10,12 +11,15 @@ __all__ = ["get_all_events_in_window"]
 
 
 def get_all_events_in_window(from_time: str = None, to_time: str = None,
+                             delay: int = 0,
                              configuration: Configuration = None,
                              secrets: Secrets = None) -> str:
     """
     get all events from instana within a time window, given by the from_time
     and the to_time
     """
+    logger.debug("delay is: {}".format(delay))
+    time.sleep(delay)
     from_time = convert_time(from_time)
     to_time = convert_time(to_time)
     logger.debug("from_time {}".format(from_time))

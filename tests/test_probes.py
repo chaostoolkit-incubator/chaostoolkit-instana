@@ -16,8 +16,9 @@ def test_get_all_events_in_window(get_all_events):
         text=None,
         json=lambda: responses.events)
 
-    result = get_all_events_in_window(
-        "", "", config.config, secrets.secrets)
+    result = get_all_events_in_window(from_time="", to_time="",
+                                      configuration=config.config,
+                                      secrets=secrets.secrets)
     assert result.json() == responses.events
 
 
@@ -58,9 +59,7 @@ def test_none_date_string():
 def test_check_date_string_invalid_date():
     time_str = "invalid date str"
     try:
-        result_milli_since_epoch = convert_time(
-                                    time_str)
-        print(result_milli_since_epoch)
+        convert_time(time_str)
     except ActivityFailed as error:
         assert str(error) == "Invalid date string provided"
 
