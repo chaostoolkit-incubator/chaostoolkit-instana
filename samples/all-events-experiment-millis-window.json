@@ -14,7 +14,11 @@
         }
     },
     "configuration": {
-            "instana_host": "https://ccchaoslabs-ccchaoslabs.instana.io"
+        "instana_host" : 
+        {
+            "type" : "env",
+            "key"  : "INSTANA_HOST"
+        }
     },
     "method": [
 		{

@@ -104,3 +104,4 @@ ENV/
 junit-test-results.xml
 
 journal.json
+.vscode/

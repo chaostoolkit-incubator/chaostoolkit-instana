@@ -8,13 +8,17 @@
     "secrets": {
         "instana": {
             "instana_api_token": {
-                "type": "env",
-                "key": "INSTANA_API_TOKEN"
+                "type" : "env",
+                "key"  : "INSTANA_API_TOKEN"
             }
         }
     },
     "configuration": {
-            "instana_host": "https://ccchaoslabs-ccchaoslabs.instana.io"
+        "instana_host" : 
+        {
+            "type" : "env",
+            "key"  : "INSTANA_HOST"
+        }
     },
     "method": [
 		{
@@ -22,9 +26,9 @@
             "name": "get-all-events-in-window-from-instana",
             "provider": {
                 "secrets": ["instana"],
-                "type": "python",
-                "module": "chaosinstana.probes",
-                "func": "get_all_events_in_window"
+                "type"   : "python",
+                "module" : "chaosinstana.probes",
+                "func"   : "get_all_events_in_window"
             }
         }
     ],
