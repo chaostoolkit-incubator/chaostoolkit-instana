@@ -27,17 +27,17 @@ $ pip install -U chaostoolkit-instana
 
 ## Usage
 
-To use the probes and actions from this package, add the following to your
-experiment file:
+To use the probes and actions from this package, add the following secrets and configuration to your environment or experiments file:
 
-```json
+### Secrets 
 
+* `INSTANA_API_TOKEN` - Token for accessing the Instana API
 
-```
+### Configuration
 
-That's it!
+* `INSTANA_HOST` - Host of the Instana instance that you wish to connect to
 
-Please explore the code to see existing probes and actions.
+A [collection of samples](samples/) are provided so you can see existing probes and actions.
 
 ### Discovery
 
