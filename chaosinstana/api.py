@@ -43,6 +43,6 @@ def get_all_events(from_time: str, to_time: str,
                 secrets.get("instana_api_token"))
         }
     )
-    logger.debug("r.json(): {}".format(r.json()))
+    # logger.debug("r.json(): {}".format(r.json()))
 
     return r.json()

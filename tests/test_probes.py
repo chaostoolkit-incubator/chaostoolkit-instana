@@ -5,6 +5,8 @@ import requests_mock
 
 from chaosinstana.probes import get_all_events_in_window
 from chaosinstana.probes import convert_time
+from chaosinstana.probes import has_severity
+from chaosinstana.types import Events
 
 from tests.fixtures import config, responses, secrets
 
@@ -20,6 +22,16 @@ def test_get_all_events_in_window(get_all_events):
                                       configuration=config.config,
                                       secrets=secrets.secrets)
     assert result.json() == responses.events
+
+
+def test_has_severity_level(sample_events: Events):
+    result = has_severity(sample_events, 10)
+    assert result
+
+
+def test_does_not_have_severity_level(sample_events: Events):
+    result = has_severity(sample_events, 2)
+    assert result is False
 
 
 def test_check_milli_since_epoch():
