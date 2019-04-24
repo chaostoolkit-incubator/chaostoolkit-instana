@@ -27,7 +27,7 @@
             "provider": {
                 "secrets": ["instana"],
                 "type": "python",
-                "module": "chaosinstana.probes",
+                "module": "chaosinstana.events.probes",
                     "func": "has_critical_events_in_window",
                     "arguments": {
                         "from_time": "6 hour ago",

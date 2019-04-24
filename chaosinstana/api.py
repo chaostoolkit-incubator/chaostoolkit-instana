@@ -15,6 +15,7 @@ def get_all_events(from_time: str, to_time: str,
      and the to_time for details of the api see
      https://instana.github.io/openapi/#tag/Events
     """
+    logger.debug("get_all_events")
     instana_host = configuration.get("instana_host")
     instana_api_token = secrets.get("instana_api_token")
 
@@ -43,6 +44,7 @@ def get_all_events(from_time: str, to_time: str,
                 secrets.get("instana_api_token"))
         }
     )
-    # logger.debug("r.json(): {}".format(r.json()))
+    logger.info("Instana reponse code: {}".format(r.status_code))
+    logger.debug("Instana json response: {}".format(r.json()))
 
     return r.json()
