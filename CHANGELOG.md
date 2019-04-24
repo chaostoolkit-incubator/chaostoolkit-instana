@@ -9,6 +9,12 @@
 -     Add "unit tests for convert time"
 -     Add "delay parameter in probe and added usage in readme"
 -     Add TravisCI [#5][5]
+-     Add "Repackaged Probes to events.Probes"
+-     Add "New method has_warning_or_critical_events_in_window"
+-     Add "New method has_critical_events_in_window"
+-     Add "New method has_warning_events_in_window"
+-     Add "New method has_change_events_in_window"
+-     Add "New internal method has_severity"
 
 [5]: https://github.com/chaostoolkit-incubator/chaostoolkit-instana/issues/5
 
