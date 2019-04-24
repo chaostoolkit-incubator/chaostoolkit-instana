@@ -27,7 +27,7 @@
             "provider": {
                 "secrets": ["instana"],
                 "type": "python",
-                "module": "chaosinstana.probes",
+                "module": "chaosinstana.events.probes",
                     "func": "get_all_events_in_window",
                     "arguments": {
                         "from_time": "1554143400000"

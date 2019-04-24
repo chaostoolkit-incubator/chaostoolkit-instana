@@ -23,15 +23,15 @@
     "method": [
 		{
             "type": "probe",
-            "name": "get-all-events-in-window-from-instana",
+            "name": "is_critical-in-last-6-hours-window-delay-5",
             "provider": {
                 "secrets": ["instana"],
                 "type": "python",
                 "module": "chaosinstana.events.probes",
-                    "func": "get_all_events_in_window",
+                    "func": "has_critical_events_in_window",
                     "arguments": {
-                        "from_time": "10 minutes ago",
-                        "to_time": "5 minutes ago"
+                        "from_time": "6 hour ago",
+                        "delay"     :  5
                     }
             }
         }

@@ -1,0 +1,115 @@
+[{
+	"eventId": "BTmHJGSQdylD3FL0yWx-Q",
+	"start": 1555501560000,
+	"end": 1555501865000,
+	"problem": "Error rate is too high",
+	"fixSuggestion": "Error rate stays at a high level for an extended period of time",
+	"severity": 10,
+	"snapshotId": "8a6b3c5e6ba4da6ebfdf08b068ca74f7d99ed161",
+	"metrics": [{
+		"metricName": "error_rate",
+		"snapshotId": "_RPokviJjLN1QGxye28TQp2ON2A",
+		"entityId": {
+			"steadyId": "8a6b3c5e6ba4da6ebfdf08b068ca74f7d99ed161",
+			"pluginId": "com.instana.forge.application.Service",
+			"host": ""
+		}
+	}],
+	"recentEvents": [{
+		"eventId": "pB3WOiF6SOy7FnXeRhjQlQ"
+	}]
+}, {
+	"eventId": "C10Zd8L-Rcu62MDhbq4zmw",
+	"start": 1555501560000,
+	"end": 1555501860000,
+	"problem": "Error rate is too high",
+	"fixSuggestion": "Error rate stays at a high level for an extended period of time",
+	"severity": 10,
+	"snapshotId": "n0EX7iCpgEAlPDtWct7e6qVGlrY",
+	"metrics": [{
+		"metricName": "error_rate",
+		"snapshotId": "817E1PGNq6Ib1jB_dhUJvOzdnb0",
+		"entityId": {
+			"steadyId": "n0EX7iCpgEAlPDtWct7e6qVGlrY",
+			"pluginId": "com.instana.forge.application.Endpoint",
+			"host": ""
+		}
+	}]
+}, {
+	"eventId": "OENZ9AGZQmS3ZXpKi-80cg",
+	"start": 1555503360000,
+	"end": 1555503540000,
+	"problem": "Error rate is too high",
+	"fixSuggestion": "Error rate stays at a high level for an extended period of time",
+	"severity": 10,
+	"snapshotId": "8a6b3c5e6ba4da6ebfdf08b068ca74f7d99ed161",
+	"metrics": [{
+		"metricName": "error_rate",
+		"snapshotId": "_RPokviJjLN1QGxye28TQp2ON2A",
+		"entityId": {
+			"steadyId": "8a6b3c5e6ba4da6ebfdf08b068ca74f7d99ed161",
+			"pluginId": "com.instana.forge.application.Service",
+			"host": ""
+		}
+	}],
+	"recentEvents": [{
+		"eventId": "rzUzA1JMTVmnO0J29fLgxw"
+	}]
+},
+{
+    "eventId": "oZwihUcEQyyo6Ck3Dt4oIA",
+    "start": 1554186843000,
+    "end": 1554186933000,
+    "problem": "online",
+    "fixSuggestion": "Docker Container on Host student1",
+    "severity": -1,
+    "snapshotId": "SXIeGEDA_TnNi1oXd-Ax95IT9js"
+},
+{
+    "eventId": "lr53TUqtSMSxgBq_j8-aaA",
+    "start": 1554186843000,
+    "end": 1554186933000,
+    "problem": "online",
+    "fixSuggestion": "Docker Container on Host student1",
+    "severity": -1,
+    "snapshotId": "cPRStdeatZAkQWzyLdTdPlVGw28"
+},
+{
+	"eventId": "PTnnYX1FR5SQerztrtg3UQ",
+	"start": 1554727769000,
+	"end": 1554728008000,
+	"problem": "System load too high",
+	"fixSuggestion": "Machine is more than 50% of its time at a load higher than 4",
+	"severity": 5,
+	"snapshotId": "WYELnJ4J1ARJD8fHBzw7vzEwgV0",
+	"metrics": [{
+		"metricName": "load.1min",
+		"snapshotId": "WYELnJ4J1ARJD8fHBzw7vzEwgV0",
+		"entityId": {
+			"steadyId": "h",
+			"pluginId": "com.instana.forge.infrastructure.os.host.Host",
+			"host": "EC2-i-02b31a6098d7d37d5"
+		}
+	}]
+}, {
+	"eventId": "OL-tPcPeQi-TkXQIYZ7nhg",
+	"start": 1554815880000,
+	"end": 1554816845000,
+	"problem": "Error rate is too high",
+	"fixSuggestion": "Error rate stays at a high level for an extended period of time",
+	"severity": 5,
+	"snapshotId": "8a6b3c5e6ba4da6ebfdf08b068ca74f7d99ed161",
+	"metrics": [{
+		"metricName": "error_rate",
+		"snapshotId": "_RPokviJjLN1QGxye28TQp2ON2A",
+		"entityId": {
+			"steadyId": "8a6b3c5e6ba4da6ebfdf08b068ca74f7d99ed161",
+			"pluginId": "com.instana.forge.application.Service",
+			"host": ""
+		}
+	}],
+	"recentEvents": [{
+		"eventId": "2yDU_0vLT0K8IGRmLde06Q"
+	}]
+}
+]

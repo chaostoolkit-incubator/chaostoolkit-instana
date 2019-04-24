@@ -30,8 +30,8 @@
                 "module": "chaosinstana.events.probes",
                     "func": "get_all_events_in_window",
                     "arguments": {
-                        "from_time": "10 minutes ago",
-                        "to_time": "5 minutes ago"
+                        "from_time": "6 hours ago",
+                        "delay"     :  5
                     }
             }
         }
