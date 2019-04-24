@@ -1,0 +1,40 @@
+{
+    "version": "1.0.0",
+    "title": "Showcases getting an event from Instana",
+    "description": "Demonstrates retrieving an event for an event id",
+    "tags": [
+        "instana"
+    ],
+    "secrets": {
+        "instana": {
+            "instana_api_token": {
+                "type": "env",
+                "key": "INSTANA_API_TOKEN"
+            }
+        }
+    },
+    "configuration": {
+        "instana_host" :
+        {
+            "type" : "env",
+            "key"  : "INSTANA_HOST"
+        }
+    },
+    "method": [
+		{
+            "type": "probe",
+            "name": "get-event-in-window-from-instana",
+            "provider": {
+                "secrets": ["instana"],
+                "type": "python",
+                "module": "chaosinstana.events.probes",
+                    "func": "get_event_content",
+                    "arguments": {
+                        "event_id": "0GKoMyN7TWGPAHVj_h6XNw",
+                        "delay": 5
+                    }
+            }
+        }
+    ],
+    "rollbacks": []
+}

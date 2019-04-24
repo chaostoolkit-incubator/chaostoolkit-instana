@@ -6,7 +6,8 @@ from unittest.mock import patch
 from chaoslib.exceptions import ActivityFailed
 
 from chaosinstana.events.probes import (
-                                    convert_time, get_all_events_in_window,
+                                    convert_time, get_event_content,
+                                    get_all_events_in_window,
                                     has_change_events_in_window,
                                     has_critical_events_in_window,
                                     has_warning_events_in_window,
@@ -255,7 +256,45 @@ def test_check_date_string_invalid_date():
         assert str(error) == "Invalid date string provided"
 
 
-def testapi_with_host():
+def test_get_event_content_with_host():
+    c = {
+        "instana_host": "https://testinstanna.io"
+    }
+    s = {
+        "instana_api_token": "1234456"
+    }
+    with requests_mock.Mocker() as m:
+        m.get("https://testinstanna.io/api/events/123456",
+              json={
+                "events": "event"
+              })
+        data = get_event_content(event_id="123456", delay=5, configuration=c,
+                                 secrets=s)
+        assert data == {"events": "event"}
+
+
+def test_get_event_content_without_host():
+    c = {
+    }
+    s = {
+        "instana_api_token": "1234456"
+    }
+    with requests_mock.Mocker() as m:
+        m.get("https://testinstanna.io/api/events/123456",
+              json={
+                "events": "event"
+              })
+        try:
+            get_event_content(event_id="123456", delay=5,
+                              configuration=c, secrets=s)
+
+        except ActivityFailed:
+            result = "ActivityFailed"
+
+        assert result == "ActivityFailed"
+
+
+def test_get_all_events_with_host():
     c = {
         "instana_host": "https://testinstanna.io"
     }
@@ -275,7 +314,7 @@ def testapi_with_host():
         assert data == {"events": "event"}
 
 
-def testapi_without_host():
+def test_get_all_events_without_host():
     c = {
     }
     s = {
