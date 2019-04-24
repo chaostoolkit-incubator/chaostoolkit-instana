@@ -7,7 +7,7 @@ from chaoslib.types import Configuration, Secrets
 from logzero import logger
 
 from chaosinstana.types import Events
-from chaosinstana.api import get_all_events
+from chaosinstana.api import get_all_events, get_event
 
 __all__ = ["get_all_events_in_window", "has_change_events_in_window",
            "has_critical_events_in_window", "has_warning_events_in_window",
@@ -105,8 +105,24 @@ def get_all_events_in_window(from_time: str = None, to_time: str = None,
                  format(from_milli, milli_to_date_time(from_milli)))
     logger.debug("to_time {} ({})".
                  format(to_milli, milli_to_date_time(to_milli)))
-    res = get_all_events(
-        from_milli, to_milli, configuration, secrets)
+    res = get_all_events(from_time=from_milli, to_time=to_milli,
+                         configuration=configuration, secrets=secrets)
+
+    return res
+
+
+def get_event_content(event_id: str, delay: int = 0,
+                      configuration: Configuration = None,
+                      secrets: Secrets = None) -> str:
+    """
+    Get the event with the provided event id from instana, delay the request
+    if required
+    """
+    logger.info("Instana probe delay is: {} seconds.".format(delay))
+    time.sleep(delay)
+
+    res = get_event(event_id=event_id, configuration=configuration,
+                    secrets=secrets)
     return res
 
 

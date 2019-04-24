@@ -15,6 +15,8 @@
 -     Add "New method has_warning_events_in_window"
 -     Add "New method has_change_events_in_window"
 -     Add "New internal method has_severity"
+-     Add "add get_event method to api"
+-     Add "add get_event_content method to probes"
 
 [5]: https://github.com/chaostoolkit-incubator/chaostoolkit-instana/issues/5
 
