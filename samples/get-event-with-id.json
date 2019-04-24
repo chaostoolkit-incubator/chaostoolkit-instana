@@ -28,11 +28,11 @@
                 "secrets": ["instana"],
                 "type": "python",
                 "module": "chaosinstana.events.probes",
-                    "func": "get_event_content",
-                    "arguments": {
-                        "event_id": "0GKoMyN7TWGPAHVj_h6XNw",
-                        "delay": 5
-                    }
+                "func": "get_event_content",
+                "arguments": {
+                    "event_id": "0GKoMyN7TWGPAHVj_h6XNw",
+                    "delay": 5
+                }
             }
         }
     ],
