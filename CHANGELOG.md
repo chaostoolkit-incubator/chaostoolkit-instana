@@ -17,7 +17,8 @@
 -     Add "New internal method has_severity"
 -     Add "add get_event method to api"
 -     Add "add get_event_content method to probes"
+-     Fix exported `chaosinstana.events` subpackage [#21][21]
 
 [5]: https://github.com/chaostoolkit-incubator/chaostoolkit-instana/issues/5
-
+[21]: https://github.com/chaostoolkit-incubator/chaostoolkit-instana/issues/21
 
