@@ -8,6 +8,30 @@ import requests
 __all__ = ['get_all_events', 'get_event']
 
 
+def get_request(url: str, params: dict, secrets: Secrets) -> str:
+    """
+     Call the instana rest api using the url amd params provided, use an
+     Authoroisartion header from the secrets provded
+    """
+    logger.debug("get_all_events")
+    r = requests.get(
+        url=url,
+        params=params,
+        headers={
+            "Authorization": "apiToken {}".format(
+                secrets.get("instana_api_token"))
+        }
+    )
+    if r.status_code > 399:
+        raise ActivityFailed("failed to call '{u}': {c} => {s}".format(
+            u=url, c=r.status_code, s=r.text))
+
+    logger.debug("Instana response status code: {}".format(r.status_code))
+    logger.debug("Instana json response: {}".format(r.json()))
+
+    return r.json()
+
+
 def get_all_events(from_time: str, to_time: str,
                    configuration: Configuration, secrets: Secrets) -> str:
     """
@@ -36,22 +60,8 @@ def get_all_events(from_time: str, to_time: str,
     logger.debug("url: {}".format(url))
     logger.debug("params: {}".format(params))
 
-    r = requests.get(
-        url=url,
-        params=params,
-        headers={
-            "Authorization": "apiToken {}".format(
-                secrets.get("instana_api_token"))
-        }
-    )
-    if r.status_code > 399:
-        raise ActivityFailed("failed to call '{u}': {c} => {s}".format(
-            u=url, c=r.status_code, s=r.text))
-
-    logger.info("Instana reponse code: {}".format(r.status_code))
-    logger.debug("Instana json response: {}".format(r.json()))
-
-    return r.json()
+    result = get_request(url, params, secrets)
+    return result
 
 
 def get_event(event_id: str, configuration: Configuration,
@@ -73,18 +83,8 @@ def get_event(event_id: str, configuration: Configuration,
 
     logger.debug("url: {}".format(url))
 
-    r = requests.get(
-        url=url,
-        headers={
-            "Authorization": "apiToken {}".format(
-                secrets.get("instana_api_token"))
-        }
-    )
-    if r.status_code > 399:
-        raise ActivityFailed("failed to call '{u}': {c} => {s}".format(
-            u=url, c=r.status_code, s=r.text))
+    params = {}
 
-    logger.info("Instana reponse code: {}".format(r.status_code))
-    logger.debug("Instana json response: {}".format(r.json()))
+    result = get_request(url, params, secrets)
 
-    return r.json()
+    return result
