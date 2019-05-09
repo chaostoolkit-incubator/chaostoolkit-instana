@@ -44,6 +44,10 @@ def get_all_events(from_time: str, to_time: str,
                 secrets.get("instana_api_token"))
         }
     )
+    if r.status_code > 399:
+        raise ActivityFailed("failed to call '{u}': {c} => {s}".format(
+            u=url, c=r.status_code, s=r.text))
+
     logger.info("Instana reponse code: {}".format(r.status_code))
     logger.debug("Instana json response: {}".format(r.json()))
 
@@ -76,6 +80,10 @@ def get_event(event_id: str, configuration: Configuration,
                 secrets.get("instana_api_token"))
         }
     )
+    if r.status_code > 399:
+        raise ActivityFailed("failed to call '{u}': {c} => {s}".format(
+            u=url, c=r.status_code, s=r.text))
+
     logger.info("Instana reponse code: {}".format(r.status_code))
     logger.debug("Instana json response: {}".format(r.json()))
 
