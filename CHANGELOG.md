@@ -1,6 +1,12 @@
 # Changelog
 
-[Unreleased]: https://github.com/chaostoolkit-incubator/chaostoolkit-instana/compare/get_events
+## [Unreleased][]
+
+[Unreleased]: https://github.com/chaostoolkit-incubator/chaostoolkit-instana/compare/0.1.0...HEAD
+
+## [0.1.0][]
+
+[0.1.0]: https://github.com/chaostoolkit-incubator/chaostoolkit-instana/e585f9f...0.1.0
 
 ### Added
 
@@ -21,4 +27,3 @@
 
 [5]: https://github.com/chaostoolkit-incubator/chaostoolkit-instana/issues/5
 [21]: https://github.com/chaostoolkit-incubator/chaostoolkit-instana/issues/21
-
