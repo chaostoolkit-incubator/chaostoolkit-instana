@@ -4,6 +4,11 @@
 
 [Unreleased]: https://github.com/chaostoolkit-incubator/chaostoolkit-instana/compare/0.1.0...HEAD
 
+### Fixed
+-    Fixed boilerplate typo in description of project [#22][22]
+
+[22]: https://github.com/chaostoolkit-incubator/chaostoolkit-instana/issues/22
+
 ## [0.1.0][]
 
 [0.1.0]: https://github.com/chaostoolkit-incubator/chaostoolkit-instana/e585f9f...0.1.0

@@ -7,7 +7,7 @@ import io
 import setuptools
 
 name = 'chaostoolkit-instana'
-desc = 'instana intergration'
+desc = 'Chaos Toolkit Extension for Instana'
 
 with io.open('README.md', encoding='utf-8') as strm:
     long_desc = strm.read()
