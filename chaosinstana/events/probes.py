@@ -6,7 +6,7 @@ from chaoslib.exceptions import ActivityFailed
 from chaoslib.types import Configuration, Secrets
 from logzero import logger
 
-from chaosinstana.types import Events
+from chaosinstana.types import Events, InstanaResponse
 from chaosinstana.api import get_all_events, get_event
 
 __all__ = ["get_all_events_in_window", "has_change_events_in_window",
@@ -92,7 +92,7 @@ def has_change_events_in_window(from_time: str = None, to_time: str = None,
 def get_all_events_in_window(from_time: str = None, to_time: str = None,
                              delay: int = 0,
                              configuration: Configuration = None,
-                             secrets: Secrets = None) -> str:
+                             secrets: Secrets = None) -> InstanaResponse:
     """
     Get all events from instana within a time window, given by the from_time
     and the to_time

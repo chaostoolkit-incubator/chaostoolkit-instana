@@ -314,6 +314,51 @@ def test_get_all_events_with_host():
         assert data == {"events": "event"}
 
 
+def test_get_event_with_error_respone_code():
+    c = {
+        "instana_host": "https://testinstanna.io"
+    }
+    s = {
+        "instana_api_token": "1234456"
+    }
+    with requests_mock.Mocker() as m:
+        m.get("https://testinstanna.io/api/events/123456",
+              text='Not Found', status_code=404)
+
+        try:
+            get_event_content(event_id="123456", delay=5,
+                              configuration=c, secrets=s)
+
+        except ActivityFailed:
+            result = "ActivityFailed"
+
+        assert result == "ActivityFailed"
+
+
+def test_get_all_events_with_error_respone_code():
+    c = {
+        "instana_host": "https://testinstanna.io"
+    }
+    s = {
+        "instana_api_token": "1234456"
+    }
+    with requests_mock.Mocker() as m:
+        m.get("https://testinstanna.io/api/events?from=155566&to=1555667",
+              text='Not Found', status_code=404)
+
+        try:
+            get_all_events_in_window(
+                    from_time="155566",
+                    to_time="1555667",
+                    configuration=c,
+                    secrets=s)
+
+        except ActivityFailed:
+            result = "ActivityFailed"
+
+        assert result == "ActivityFailed"
+
+
 def test_get_all_events_without_host():
     c = {
     }
